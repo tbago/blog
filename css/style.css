@@ -281,14 +281,29 @@ div {
         word-break: normal; }
         .post .post-content ul a:hover, .post .post-content ol a:hover {
           text-decoration: underline; }
-  .post .tags {
-    padding-bottom: 1em; }
-    .post .tags a {
-      margin-right: .5em; }
-      .post .tags a:before {
-        font-family: "FontAwesome";
-        content: "\f0c6";
-        padding-right: 0.3em; }
+    .post .post-content .tagcloud {
+      margin: 0 0 30px 0; }
+      .post .post-content .tagcloud a {
+        padding: 0px 5px;
+        margin: 3px;
+        display: inline-block;
+        border: 1px solid #808080;
+        border-radius: 999em;
+        color: #aaa; }
+        .post .post-content .tagcloud a:hover {
+          color: #fff;
+          border: 1px solid #808080;
+          background: #808080; }
+    .post .post-content .one-tag-list {
+      margin: 30px 0; }
+      .post .post-content .one-tag-list .tag-name .tag-text {
+        margin-left: 5px;
+        font-size: 16px;
+        font-weight: bold; }
+  .post .tags a {
+    margin-right: .5em; }
+    .post .tags a i {
+      padding-right: 0.3em; }
 
 .page-navigator {
   border-top: 1px solid #ddd;
@@ -798,7 +813,8 @@ figure.highlight,
   .codeblock .gutter {
     background: #f7f8f8;
     border-right: 1px solid #e6e6e6;
-    padding: 0.3em 15px; }
+    padding: 0.3em 15px;
+    user-select: none; }
   figure.highlight .code,
   .codeblock .code {
     padding: 0.3em 15px 0.3em 1em;
@@ -817,7 +833,8 @@ figure.highlight,
 .gist .line-number {
   font-family: Menlo, Consolas, monospace;
   font-size: 1em;
-  margin: 0 0 5px 0; }
+  margin: 0 0 5px 0;
+  user-select: none; }
 
 .highlight .comment {
   color: #969896; }
@@ -1321,6 +1338,15 @@ figure.highlight,
     margin-left: 1em;
     padding-left: 0; }
 
+@media print, screen and (max-width: 48em) {
+  .toc-article {
+    margin: 0em;
+    max-width: 100%; }
+  .clear {
+    padding: 2.1em 0em 0em 0em; }
+  #toc {
+    float: none; } }
+
 /* table*/
 table {
   margin: auto auto 15px;
@@ -1472,12 +1498,3 @@ em.search-keyword {
   color: #fff;
   background-color: #999999;
   text-shadow: 0; }
-
-.post-copyright {
-  margin: 2em 0 0;
-  padding: 0.5em 1em;
-  border-left: 3px solid #FF1700;
-  background-color: #F9F9F9;
-  list-style: none; }
-  .post-copyright li {
-    margin: 8px 0; }
